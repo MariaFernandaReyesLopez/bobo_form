@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Cookie - Example</title>
+</head>
+<body>
+    <button type="button" id="seeAll">See all the cookies</button>
+    <button type="button" id="createCookie1">Create cookie 1</button>
+    <button type="button" id="createCookie2">Create cookie 2</button>
+    <button type="button" id="deleteCookie1">Delete cookie 1</button>
+    <button type="button" id="deleteCookie2">Delete cookie 2</button>
+    
+    <script>
+document.getElementById("seeAll").addEventListener("click",seeAll);
+document.getElementById("createCookie1").addEventListener("click",createCookie);
+document.getElementById("createCookie2").addEventListener("click",createCookie);
+document.getElementById("deleteCookie1").addEventListener("click",deleteCookie);
+document.getElementById("deleteCookie2").addEventListener("click",deleteCookie);
+
+        function seeAll(){
+            alert(document.cookie);
+        }
+
+        function createCookie(e){
+            if(!e) e = window.event;
+            if (e.target.id=="crearCookie1")
+                document.cookie="Name = Maria Fernanda";
+            else if (e.target.id=="crearCookie2")
+                document.cookie="Lastname = Reyes Lopez";
+        }
+
+        function deleteCookie(e){
+            if(!e) e = window.event;
+            if (e.target.id=="deleteCookie1")
+                document.cookie="Name =;expires=Thu, 01 Jan 1978 00:00:00 UTC";
+            else if (e.target.id=="deleteCookie2")
+                document.cookie="Last name =;expires=Thu, 01 Jan 1978 00:00:00 UTC";
+        }
+
+    </script>
+</body>
+</html>
+
+https://www.w3schools.com/js/js_cookies.asp
